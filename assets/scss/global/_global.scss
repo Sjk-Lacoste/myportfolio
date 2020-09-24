@@ -1,0 +1,26 @@
+@import "../mixins/mixins";
+@import "./reset";
+@import "./variables";
+@import "./animations";
+@import "./predefined";
+@import "./responsive";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+// .columns {
+//   width: 100%;
+//   max-width: $grid-max-width;
+//   margin: 0 auto;
+
+//   @extend %clearfix;
+
+//   [class*="column-"] {
+//     float: left;
+//     padding: 1em;
+//     width: 100%;
+//     min-height: 1px;
+//   }
+
+// }

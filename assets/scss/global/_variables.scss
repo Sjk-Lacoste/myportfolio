@@ -1,0 +1,31 @@
+/****************************************************
+Fonts
+****************************************************/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500|Rubik:500,700');
+
+/****************************************************
+Font Variables
+****************************************************/
+$primary-font: 'Roboto', sans-serif;
+$title-font: 'Rubik', sans-serif;
+
+/****************************************************
+Colors
+****************************************************/
+$primary-color: #4458dc;
+$primary-color2: #854fee;
+$title-color: #000000;
+$text-color: #777777;
+$white: #fff;
+
+/****************************************************
+Grid Variables
+****************************************************/
+$grid-columns: 12;
+$grid-max-width: 65em;
+
+/****************************************************
+Breakpoints
+****************************************************/
+$breakpoint-small: "only screen and (min-width: 20em)";
+$breakpoint-medium: "only screen and (min-width: 30em)";
