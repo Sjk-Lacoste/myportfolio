@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "learn-starter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,11 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@zeit/next-sass": "^1.0.1",
     "next": "9.5.3",
     "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "sass": "^1.26.11"
+    "react-dom": "16.13.1"
   }
 }
