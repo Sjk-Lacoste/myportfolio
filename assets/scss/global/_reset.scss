@@ -138,6 +138,10 @@ table {
   @include border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 img {
   width: auto;
   max-width: 100%;

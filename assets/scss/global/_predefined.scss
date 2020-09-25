@@ -25,39 +25,46 @@
 .main_title {
   text-align: center;
   margin-bottom: 100px;
+
   @media (max-width: 1199px) {
     margin-bottom: 50px;
   }
+
   h2 {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 15px;
     line-height: 50px;
     text-transform: uppercase;
+
     br {
       @media (max-width: 991px) {
         display: none;
       }
     }
+
     @media (max-width: 767px) {
       font-size: 30px;
       line-height: 34px;
     }
   }
+
   p {
     margin-bottom: 0px;
+
     br {
       @media (max-width: 991px) {
         display: none;
       }
     }
   }
+
   &.white {
     h2 {
-      color: #fff;
+      color: $white;
     }
     p {
-      color: #fff;
+      color: $white;
       opacity: 0.6;
     }
   }
@@ -84,6 +91,7 @@
 .gradient-color {
   @include gradient(90deg, $primary-color 0%, $primary-color2 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -92,7 +100,7 @@
 
 .primary_btn {
   display: inline-block;
-  color: #fff;
+  color: $white;
   letter-spacing: 0px;
   font-family: $title-font;
   font-weight: 500;
@@ -113,34 +121,34 @@
     radial-gradient(circle at top left, $primary-color, $primary-color2);
   border: double 2px transparent;
   box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
-  span {
-    padding: 0 42px;
-  }
-  &.tr-bg {
-    background-image: linear-gradient(#ffffff, #ffffff),
-      radial-gradient(circle at top left, $primary-color, $primary-color2);
-    border: 2px solid transparent;
-    color: #222222;
-    box-shadow: none;
-    &:hover {
-      background-image: linear-gradient(
-          to right,
-          $primary-color 0%,
-          $primary-color2 100%
-        ),
-        radial-gradient(circle at top left, $primary-color, $primary-color2);
-      border: double 2px transparent;
-      color: #ffffff;
-      box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
-    }
-  }
+  padding: 0 42px;
+
   &:hover {
-    background-image: linear-gradient(#ffffff, #ffffff),
+    background-image: linear-gradient($white, $white),
       radial-gradient(circle at top left, $primary-color, $primary-color2);
     border: 2px solid $primary-color2;
     color: #222222;
     box-shadow: none;
     background-clip: border-box;
+  }
+}
+
+.tr-bg {
+  background-image: linear-gradient($white, $white),
+    radial-gradient(circle at top left, $primary-color, $primary-color2);
+  border: 2px solid transparent;
+  color: $dark-grey;
+  box-shadow: none;
+  &:hover {
+    background-image: linear-gradient(
+        to right,
+        $primary-color 0%,
+        $primary-color2 100%
+      ),
+      radial-gradient(circle at top left, $primary-color, $primary-color2);
+    border: double 2px transparent;
+    color: $white;
+    box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
   }
 }
 
@@ -150,4 +158,8 @@
   top: 0;
   height: 100%;
   width: 100%;
+}
+
+.text-left {
+  text-align: left;
 }
