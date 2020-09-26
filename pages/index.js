@@ -57,8 +57,8 @@ export default function Home() {
             <div className="col-7">
               <div className="main_title text-left">
                 <h2>
-                  let's <br />
-                  Introduce about <br />
+                  let me <br />
+                  Introduce <br />
                   myself
                 </h2>
 
