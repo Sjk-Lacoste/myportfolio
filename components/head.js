@@ -13,7 +13,7 @@ const defaultAuthor = "Tshepo Mohlatlole";
 const Head = (props) => (
   <NextHead>
     <meta charSet="UTF-8" />
-    <title>{`${$props.title} - sjkFolio` || defaultMetaTitle}</title>
+    <title>{`${props.title} - sjkFolio` || defaultMetaTitle}</title>
 
     {/* Meta Tags */}
     <meta name="title" content={props.metaTitle || defaultMetaTitle} />
