@@ -17,11 +17,18 @@ const Navbar = () => {
 
               <ul className="nav no-search">
                 <li className="nav-item">
-                  <Link href="/">Home</Link>
+                  <Link href="/">
+                    <a>Home</a>
+                  </Link>
                 </li>
-                {/* <li className="nav-item">
-                  <Link href="/about">About</Link>
+
+                <li className="nav-item">
+                  <Link href="/about">
+                    <a>About</a>
+                  </Link>
                 </li>
+
+                {/*
                 <li className="nav-item">
                   <Link href="/services">Services</Link>
                 </li>

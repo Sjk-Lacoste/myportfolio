@@ -1,6 +1,6 @@
-import Head from '../components/head';
-import Link from 'next/link';
-import Navbar from '../components/navbar';
+import Head from "../components/head";
+import Link from "next/link";
+import Navbar from "../components/navbar";
 
 export default function Home() {
   return (
@@ -60,12 +60,12 @@ export default function Home() {
                 </h2>
 
                 <p>
-                  I am a junior data engineer and web developer, with experience
-                  in developing dynamic and user-friendly websites utilising
-                  agile methodologies. My background in web development informs
-                  my mindful but competitive approach. My hunger for knowledge
-                  and determination to turn information into action has led me
-                  to who I am today.
+                  I am a Software Engineer, with experience in developing
+                  dynamic and user-friendly websites utilising agile
+                  methodologies. My background in web development informs my
+                  mindful but competitive approach. My hunger for knowledge and
+                  determination to turn information into action has led me to
+                  who I am today.
                 </p>
 
                 <Link href="/">
