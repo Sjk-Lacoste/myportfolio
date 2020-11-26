@@ -1,8 +1,6 @@
-.nav-wrapper {
-  width: 100%;
-  position: sticky;
-  top: 0;
-  background-color: $white;
+.header_area {
+  z-index: 9999;
+  color: $dark-grey !important;
   //   -webkit-box-shadow: 0px 2px 15px -2px rgba(0, 0, 0, 0.75);
   //   -moz-box-shadow: 0px 2px 15px -2px rgba(0, 0, 0, 0.75);
   //   box-shadow: 0px 2px 15px -2px rgba(0, 0, 0, 0.75);
@@ -17,44 +15,14 @@
     animation: gradbar 15s ease infinite;
   }
 
-  .navbar > div {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1.5em;
-
-    .logo {
-      width: 3.5em;
-      padding: 0.5em 0;
-    }
-
-    .menu-toggle {
-      display: none;
-    }
+  .main_menu {
+    background: $transparent !important;
 
     .nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .nav-item {
-        display: flex;
-        align-items: center;
-        // background: green;
-        height: 100%;
-
-        a {
-          padding: 0 15px;
-
-          &:hover {
-            text-decoration: none;
-          }
+      button {
+        &.active {
+          color: $primary-color !important;
         }
-      }
-    }
-
-    @media screen and (max-width: 678px) {
-      .nav {
-        display: none;
       }
     }
   }

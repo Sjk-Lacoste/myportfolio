@@ -38,7 +38,7 @@ const Navbar = (props) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  console.log(isMobile);
+  console.log(router);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -53,75 +53,90 @@ const Navbar = (props) => {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            SjkFolio
-          </Typography>
+    <>
+      <div className={classes.root}>
+        <AppBar
+          position="static"
+          className="header_area"
+          style={{ background: "transparent", boxShadow: "none" }}
+        >
+          <div className="grad-bar" />
+          <Toolbar className="main_menu">
+            <Typography variant="h6" className={classes.title}>
+              SjkFolio
+            </Typography>
 
-          <div>
-            {isMobile ? (
-              <>
-                <IconButton
-                  edge="start"
-                  className={classes.menuButton}
-                  color="inherit"
-                  aria-label="menu"
-                  onClick={handleMenu}
-                >
-                  <MenuIcon />
-                </IconButton>
+            <div>
+              {isMobile ? (
+                <>
+                  <IconButton
+                    edge="start"
+                    className={classes.menuButton}
+                    color="inherit"
+                    aria-label="menu"
+                    onClick={handleMenu}
+                  >
+                    <MenuIcon />
+                  </IconButton>
 
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={open}
-                  onClose={handleClose}
-                  style={{ marginTop: "40px" }}
-                >
-                  {MenuItems.map((item) => {
-                    return (
-                      <MenuItem
-                        key={generateId()}
-                        className={item.cName}
-                        onClick={() => handleMenuClick(item.url)}
-                      >
-                        {item.title}
-                      </MenuItem>
-                    );
-                  })}
-                </Menu>
-              </>
-            ) : (
-              <>
-                {MenuItems.map((item) => {
-                  return (
-                    <Button
-                      key={generateId()}
-                      color="inherit"
-                      className={item.cName}
-                      onClick={() => handleMenuClick(item.url)}
-                    >
-                      {item.title}
-                    </Button>
-                  );
-                })}
-              </>
-            )}
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+                  <Menu
+                    id="menu-appbar"
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    open={open}
+                    onClose={handleClose}
+                    style={{ marginTop: "40px" }}
+                  >
+                    {MenuItems.map((item) => {
+                      return (
+                        <MenuItem
+                          key={generateId()}
+                          className={item.cName}
+                          onClick={() => handleMenuClick(item.url)}
+                          className={
+                            router.route === item.url ? "active" : null
+                          }
+                        >
+                          {item.title}
+                        </MenuItem>
+                      );
+                    })}
+                  </Menu>
+                </>
+              ) : (
+                <>
+                  <div className="nav">
+                    {MenuItems.map((item) => {
+                      return (
+                        <Button
+                          key={generateId()}
+                          color="inherit"
+                          className={item.cName}
+                          onClick={() => handleMenuClick(item.url)}
+                          className={
+                            router.route === item.url ? "active" : null
+                          }
+                        >
+                          {item.title}
+                        </Button>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
+    </>
   );
 };
 
