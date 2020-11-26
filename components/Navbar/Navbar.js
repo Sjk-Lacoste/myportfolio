@@ -7,32 +7,20 @@ import {
   IconButton,
   MenuItem,
   Menu,
+  useMediaQuery,
+  Button,
 } from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
 import Link from "next/link";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import HideOnScroll from "./HideOnScroll";
 import { MenuItems } from "./MenuItems";
 import { generateId } from "../../lib/helpers/generateId";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  },
-  sectionDesktop: {
-    color: "white",
-    display: "none",
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-    },
-  },
-  sectionMobile: {
-    color: "white",
-    display: "flex",
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -42,75 +30,49 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = () => {
+const Navbar = (props) => {
   const classes = useStyles();
   const router = useRouter();
-
-  const mobileMenuId = "menu-mobile";
-
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+  console.log(isMobile);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   const handleMenuClick = (pageUrl) => {
     router.push(pageUrl);
   };
 
-  const renderMobileMenu = (
-    <>
-      <Menu
-        id={mobileMenuId}
-        anchorEl={anchorEl}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
-        anchorEl={anchorEl}
-        keepMounted
-        transformOrigin={{ vertical: "top", horizontal: "right" }}
-        open={open}
-        onClose={() => setAnchorEl(null)}
-        style={{ marginTop: "40px" }}
-      >
-        {MenuItems.map((item) => {
-          return (
-            <MenuItem
-              key={generateId()}
-              className={item.cName}
-              onClick={() => handleMenuClick(item.url)}
-            >
-              {item.title}
-            </MenuItem>
-          );
-        })}
-      </Menu>
-    </>
-  );
-
   return (
-    <div className="nav-wrapper">
-      <div className="grad-bar"></div>
-      <>
-        <HideOnScroll>
-          <AppBar position="fixed">
-            <Toolbar>
-              <Link href="/">
-                <IconButton color="inherit">
-                  <Image
-                    src="/logo.png"
-                    width={100}
-                    height={100}
-                    quality="100"
-                    alt="Tshepo Mohlatlole"
-                  />
-                </IconButton>
-              </Link>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            SjkFolio
+          </Typography>
 
-              <div className={classes.sectionDesktop}>
+          <div>
+            {isMobile ? (
+              <>
+                <IconButton
+                  edge="start"
+                  className={classes.menuButton}
+                  color="inherit"
+                  aria-label="menu"
+                  onClick={handleMenu}
+                >
+                  <MenuIcon />
+                </IconButton>
+
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorEl}
@@ -124,7 +86,7 @@ const Navbar = () => {
                     horizontal: "right",
                   }}
                   open={open}
-                  onClose={() => setAnchorEl(null)}
+                  onClose={handleClose}
                   style={{ marginTop: "40px" }}
                 >
                   {MenuItems.map((item) => {
@@ -139,29 +101,125 @@ const Navbar = () => {
                     );
                   })}
                 </Menu>
-              </div>
-
-              <div className={classes.sectionMobile}>
-                <IconButton
-                  edge="start"
-                  className={classes.menuButton}
-                  color="inherit"
-                  aria-label="menu"
-                  onClick={handleMenu}
-                >
-                  <MenuIcon />
-                </IconButton>
-              </div>
-            </Toolbar>
-          </AppBar>
-        </HideOnScroll>
-      </>
-
-      {renderMobileMenu}
-      <Toolbar />
+              </>
+            ) : (
+              <>
+                {MenuItems.map((item) => {
+                  return (
+                    <Button
+                      key={generateId()}
+                      color="inherit"
+                      className={item.cName}
+                      onClick={() => handleMenuClick(item.url)}
+                    >
+                      {item.title}
+                    </Button>
+                  );
+                })}
+              </>
+            )}
+          </div>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 };
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   sectionDesktop: {
+//     color: "white",
+//     display: "none",
+//     [theme.breakpoints.up("md")]: {
+//       display: "flex",
+//     },
+//   },
+//   sectionMobile: {
+//     color: "white",
+//     display: "flex",
+//     [theme.breakpoints.up("md")]: {
+//       display: "none",
+//     },
+//   },
+//   menuButton: {
+//     marginRight: theme.spacing(2),
+//   },
+//   title: {
+//     flexGrow: 1,
+//   },
+// }));
+
+// const Navbar = () => {
+//   const classes = useStyles();
+
+//   const mobileMenuId = "menu-mobile";
+
+//   const [anchorEl, setAnchorEl] = useState(null);
+//   const open = Boolean(anchorEl);
+
+//   const handleChange = (event) => {
+//     setAuth(event.target.checked);
+//   };
+
+//   const handleMenu = (event) => {
+//     setAnchorEl(event.currentTarget);
+//   };
+
+//   return (
+//     <div className="nav-wrapper">
+//       <div className="grad-bar" />
+//       <>
+//         <AppBar position="fixed">
+//           <Toolbar>
+//             <Link href="/">
+//               <IconButton color="inherit">
+//                 <Image
+//                   src="/logo.png"
+//                   width={100}
+//                   height={100}
+//                   quality="100"
+//                   alt="Tshepo Mohlatlole"
+//                 />
+//               </IconButton>
+//             </Link>
+
+//             <div>
+//               <IconButton
+//                 edge="start"
+//                 className={classes.menuButton}
+//                 color="inherit"
+//                 aria-label="menu"
+//                 onClick={handleMenu}
+//               >
+//                 <MenuIcon />
+//               </IconButton>
+//               <Menu
+//                 id="menu-appbar"
+//                 anchorEl={anchorEl}
+//                 anchorOrigin={{
+//                   vertical: "top",
+//                   horizontal: "right",
+//                 }}
+//                 keepMounted
+//                 transformOrigin={{
+//                   vertical: "top",
+//                   horizontal: "right",
+//                 }}
+//                 open={open}
+//                 onClose={() => setAnchorEl(null)}
+//
+//               >
+//
+//               </Menu>
+//             </div>
+//           </Toolbar>
+//         </AppBar>
+//       </>
+//     </div>
+//   );
+// };
 
 export default Navbar;
 // import React, { Component } from "react";

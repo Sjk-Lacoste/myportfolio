@@ -2,18 +2,17 @@ import Head from "../components/head";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
-const About = () => {
+const Services = () => {
   return (
     <>
-      <Head title="About Me" />
-
+      <Head title="Portfolio" />
       <Navbar />
 
-      <div>About Page</div>
+      <div>My Services</div>
 
       <Footer />
     </>
   );
 };
 
-export default About;
+export default Services;
