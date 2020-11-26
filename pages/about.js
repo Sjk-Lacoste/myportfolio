@@ -1,6 +1,10 @@
 import Head from "../components/head";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import Banner from "../components/Banner";
+import AboutArea from "../components/AboutArea";
+import Brands from "../components/Brands/Brands";
+import Newsletter from "../components/Newsletter/Newsletter";
 
 const About = () => {
   return (
@@ -9,7 +13,13 @@ const About = () => {
 
       <Navbar />
 
-      <div>About Page</div>
+      <Banner title="About Me" pageURL="/about" pageName="About" />
+
+      <AboutArea />
+
+      <Brands />
+
+      <Newsletter />
 
       <Footer />
     </>
