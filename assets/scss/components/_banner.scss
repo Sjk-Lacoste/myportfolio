@@ -21,7 +21,7 @@
       }
     }
 
-    .col-7 {
+    .first-col {
       vertical-align: middle;
       align-self: center;
     }
@@ -32,7 +32,7 @@
         margin-top: 150px;
       }
 
-      h3 {
+      .hello {
         font-size: 40px;
         margin-bottom: 20px;
         position: relative;
@@ -42,11 +42,12 @@
           height: 4px;
           position: absolute;
           top: 50%;
-          left: 12%;
+          left: 18%;
+          transform: translateY(-50%);
           background-color: $title-color;
           @media screen and (max-width: 575px) {
             display: none;
-          } 
+          }
         }
       }
 
@@ -139,7 +140,7 @@
             top: 50%;
             @include transform(translateY(-50%));
           }
-          
+
           &:last-child {
             margin-right: 0px;
             &:before {

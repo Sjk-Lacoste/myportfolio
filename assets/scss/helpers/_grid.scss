@@ -1,10 +1,10 @@
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
+// .row {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
 
-@for $i from 1 to $grid-columns {
-  .col-#{$i} {
-    flex: 0 0 100% / $grid-columns * $i;
-  }
-}
+// @for $i from 1 to $grid-columns {
+//   .col-#{$i} {
+//     flex: 0 0 100% / $grid-columns * $i;
+//   }
+// }

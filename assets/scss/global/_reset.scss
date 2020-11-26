@@ -138,12 +138,15 @@ table {
   @include border-box;
 }
 
-a {
-  text-decoration: none;
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none !important;
 }
 
 img {
-  width: auto;
   max-width: 100%;
+  width: auto;
   height: auto !important;
 }

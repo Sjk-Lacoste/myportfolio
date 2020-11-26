@@ -1,14 +1,14 @@
 import Head from "../components/head";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar/Navbar";
 
 const About = () => {
-    return (
-      <>
-        <Head title="About Me" />
+  return (
+    <>
+      <Head title="About Me" />
 
-        <Navbar />
-      </>
-    );
-}
+      <Navbar />
+    </>
+  );
+};
 
 export default About;

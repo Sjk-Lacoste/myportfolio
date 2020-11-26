@@ -12,12 +12,16 @@ $title-font: "Rubik", sans-serif;
 /****************************************************
 Colors
 ****************************************************/
+$black: #000000;
+$white: #fff;
+$grey: #788489;
+$dark-grey: #222222;
+$light-grey: #f9f9fd;
+
 $primary-color: #4458dc;
 $primary-color2: #854fee;
-$title-color: #000000;
+$title-color: $black;
 $text-color: #777777;
-$white: #fff;
-$dark-grey: #222222;
 
 /****************************************************
 Grid Variables
