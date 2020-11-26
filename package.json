@@ -2,15 +2,40 @@
   "name": "learn-starter",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Tshepo Mohlatlole",
+    "email": "tmohlatlole@gmail.com",
+    "url": "https://tshepomohlatlole.co.za/"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.5.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "mongodb": "^3.6.3",
+    "next": "10.0.0",
+    "next-redux-wrapper": "^6.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
     "sass": "^1.26.11"
-  }
+  },
+  "devDependencies": {
+    "prettier": "^2.2.0",
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ]
 }

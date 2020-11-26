@@ -3,10 +3,11 @@
 @import "./variables";
 @import "./animations";
 @import "./predefined";
+@import "./elements";
 @import "./responsive";
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $primary-font;
 }
 
 // .columns {
