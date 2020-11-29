@@ -8,6 +8,7 @@ module.exports = {
 
 module.exports = {
   env: {
-    MAILCHIMP_ACCESS_KEY: "e07059049dc86ef56b3b57792dec4b12-us7",
+    MAILCHIMP_API_KEY: "c1c753235211329574e95b65166cd4c2-us7",
+    MAILCHIMP_SERVER_PREFIX: "us7",
   },
 };
