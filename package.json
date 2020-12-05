@@ -20,6 +20,7 @@
     "@mailchimp/mailchimp_marketing": "^3.0.24",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "axios": "^0.21.0",
     "mongodb": "^3.6.3",
     "next": "10.0.0",
     "next-redux-wrapper": "^6.0.2",

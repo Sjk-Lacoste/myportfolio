@@ -91,5 +91,11 @@
   color: red;
 }
 
+@media (max-width: 767px) {
+  .subscription_box .primary-btn {
+    margin-left: 0px;
+  }
+}
+
 /* End Newsletter Area css
 ============================================================================================ */

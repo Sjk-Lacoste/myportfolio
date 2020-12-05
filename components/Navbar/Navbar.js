@@ -38,8 +38,6 @@ const Navbar = (props) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  console.log(router);
-
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
