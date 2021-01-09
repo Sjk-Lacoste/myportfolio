@@ -1,4 +1,5 @@
 import React, { useEffect, Fragment } from "react";
+import { AppProps } from "next/app";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -10,8 +11,7 @@ import "../assets/scss/main.scss";
 
 library.add(fab);
 
-function MyApp(props) {
-  const { Component, pageProps } = props;
+function MyApp({Component, pageProps}: AppProps) {
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");

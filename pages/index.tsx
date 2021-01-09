@@ -82,7 +82,7 @@ export default function Home() {
       <Brands />
 
       <section className="features_area">
-        <Container maxWidth="lg" justify="center">
+        <Container maxWidth="lg">
           <Grid container spacing={2}>
             <Grid item lg={8} className="text-center">
               <div className="main_title">
