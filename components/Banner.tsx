@@ -1,9 +1,14 @@
-import React from "react";
+import React, {FunctionComponent} from "react";
 import { Grid, Container, Typography } from "@material-ui/core";
 import Link from "next/link";
 
-const Banner = (props) => {
-  const { title, pageURL, pageName } = props;
+type Props = {
+  title: string,
+  pageURL: string,
+  pageName: string
+}
+
+const Banner: FunctionComponent<Props> = ({ title, pageURL, pageName }) => {
   return (
     <>
       <section className="banner_area">

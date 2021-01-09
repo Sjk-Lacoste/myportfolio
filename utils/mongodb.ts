@@ -1,4 +1,5 @@
-const MongoClient = require("mongodb").MongoClient;
+import { MongoClient } from "mongodb";
+// MongoClient = require("mongodb").MongoClient;
 
 const uri = `mongodb+srv://tmohlatlole@gmail.com:${encodeURIComponent(
   "d_P&MUHY7z-zQ6?*"
@@ -6,8 +7,12 @@ const uri = `mongodb+srv://tmohlatlole@gmail.com:${encodeURIComponent(
 
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
-client.connect((err) => {
+client.connect((err: any) => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
   client.close();
 });
+
+module.exports = {
+  client
+}

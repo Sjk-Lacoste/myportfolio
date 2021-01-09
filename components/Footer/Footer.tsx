@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { Container, Grid, Link, Typography } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import packageFile from "../../package.json";
 
-const Footer = () => {
+const Footer: FunctionComponent = () => {
   return (
     <>
       <footer className="footer_area">

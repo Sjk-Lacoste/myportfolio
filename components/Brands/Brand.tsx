@@ -1,8 +1,12 @@
+import { FunctionComponent } from "react";
 import { Grid } from "@material-ui/core";
 import Image from "next/image";
 
-const Brand = (props) => {
-  const { image } = props;
+type Props = {
+  image: string
+}
+
+const Brand: FunctionComponent<Props> = ({image}) => {
   return (
     <>
       <Grid item xs={12} sm={6} md={4} lg={4}>

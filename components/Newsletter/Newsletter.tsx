@@ -1,13 +1,14 @@
-const {
+import { FunctionComponent } from "react";
+import {
   Container,
   Grid,
   Typography,
   FormControl,
   TextField,
   Button,
-} = require("@material-ui/core");
+} from "@material-ui/core";
 
-const Newsletter = () => {
+const Newsletter: FunctionComponent = () => {
   return (
     <>
       <section className="newsletter_area">

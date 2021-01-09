@@ -1,3 +1,4 @@
+import { FunctionComponent } from "react";
 import Head from "../components/head";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
@@ -6,7 +7,7 @@ import AboutArea from "../components/AboutArea";
 import Brands from "../components/Brands/Brands";
 import Newsletter from "../components/Newsletter/Newsletter";
 
-const About = () => {
+const About: FunctionComponent = () => {
   return (
     <>
       <Head title="About Me" />

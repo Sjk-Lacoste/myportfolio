@@ -1,8 +1,9 @@
+import { FunctionComponent } from "react";
 import Head from "../components/head";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
-const Services = () => {
+const Services: FunctionComponent = () => {
   return (
     <>
       <Head title="Portfolio" />

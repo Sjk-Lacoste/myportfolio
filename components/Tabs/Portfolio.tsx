@@ -1,10 +1,16 @@
-import React from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Tabs, Tab, Typography, Box } from "@material-ui/core";
 
-const PortfolioTab = (props) => {
-  const { children, value, index, ...other } = props;
+type Props = {
+  children: ReactNode
+  value: string,
+  index?: string,
+  other: any
+}
+
+const PortfolioTab: FunctionComponent<Props> = ({ children, value, index, ...other }) => {
   return (
     <>
       <div
@@ -22,12 +28,6 @@ const PortfolioTab = (props) => {
       </div>
     </>
   );
-};
-
-PortfolioTab.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
 };
 
 export default PortfolioTab;

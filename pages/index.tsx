@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, FunctionComponent } from "react";
 import Image from "next/image";
 import Head from "../components/head";
 import {
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Home() {
+const Home: FunctionComponent = () => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
@@ -182,3 +182,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

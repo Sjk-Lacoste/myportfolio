@@ -1,7 +1,8 @@
+import { FunctionComponent } from "react";
 import { Container, Grid, Typography, Link } from "@material-ui/core";
 import Image from "next/image";
 
-const AboutArea = () => {
+const AboutArea: FunctionComponent = () => {
   return (
     <>
       <section className="about_area section_gap">

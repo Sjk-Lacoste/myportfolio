@@ -1,3 +1,4 @@
+import { FunctionComponent } from "react";
 import { Container, Grid, Typography } from "@material-ui/core";
 import Image from "next/image";
 import Brand from "./Brand";
@@ -33,7 +34,7 @@ const brandsData = [
   },
 ];
 
-const Brands = () => {
+const Brands: FunctionComponent = () => {
   return (
     <>
       <section className="brand_area section_gap_bottom">
@@ -52,8 +53,8 @@ const Brands = () => {
             <Grid item lg={4}>
               <div className="client-info">
                 <div className="d-flex m-b-50">
-                  <span className="lage">2</span>
-                  <span className="smll">Years Experince Working</span>
+                  <span className="large">2</span>
+                  <span className="small">Years Experience Working</span>
                 </div>
                 <div className="call-now d-flex">
                   <Typography component="p">call me now</Typography>

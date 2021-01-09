@@ -1,9 +1,6 @@
-import PropTypes from "prop-types";
 import { Slide, useScrollTrigger } from "@material-ui/core";
 
-const HideOnScroll = (props) => {
-  const { children, window } = props;
-
+const HideOnScroll = ({ children, window }) => {
   const trigger = useScrollTrigger({ target: window ? window() : undefined });
 
   return (
@@ -11,11 +8,6 @@ const HideOnScroll = (props) => {
       {children}
     </Slide>
   );
-};
-
-HideOnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  window: PropTypes.func,
 };
 
 export default HideOnScroll;
