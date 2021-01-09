@@ -1,13 +1,11 @@
 import React, { FunctionComponent, ReactNode } from "react";
-import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
-import { Tabs, Tab, Typography, Box } from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 
 type Props = {
   children: ReactNode
-  value: string,
-  index?: string,
-  other: any
+  value: any,
+  index: number,
+  other?: any
 }
 
 const PortfolioTab: FunctionComponent<Props> = ({ children, value, index, ...other }) => {

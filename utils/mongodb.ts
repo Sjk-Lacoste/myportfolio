@@ -13,6 +13,6 @@ client.connect((err: any) => {
   client.close();
 });
 
-module.exports = {
-  client
-}
+// module.exports = {
+//   client
+// }
