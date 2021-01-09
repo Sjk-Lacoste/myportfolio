@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -12,7 +12,7 @@ library.add(fab);
 
 function MyApp(props) {
   const { Component, pageProps } = props;
-  React.useEffect(() => {
+  useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
     if (jssStyles) {
@@ -21,14 +21,14 @@ function MyApp(props) {
   }, []);
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Head />
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consisten and simple baseline to build upon. */}
+        {/* CssBaseline kickstart an elegant, consistent and simple baseline to build upon. */}
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
-    </React.Fragment>
+    </Fragment>
   );
 }
 
