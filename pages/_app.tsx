@@ -22,7 +22,16 @@ function MyApp({Component, pageProps}: AppProps) {
 
   return (
     <Fragment>
-      <Head />
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+      </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent and simple baseline to build upon. */}
         <CssBaseline />
