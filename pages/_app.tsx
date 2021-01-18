@@ -1,27 +1,30 @@
 import React, { useEffect, Fragment } from "react";
 import { AppProps } from "next/app";
-import PropTypes from "prop-types";
+import { ApolloProvider } from "@apollo/client";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import { useApollo } from "../lib/apollo/apollo";
+
 import theme from "../lib/theme";
 import "../assets/scss/main.scss";
 
 library.add(fab);
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
+  const apolloClient = useApollo(pageProps.initialApolloState);
   useEffect(() => {
     // Remove the server-side injected CSS.
-    const jssStyles = document.querySelector("#jss-server-side");
+    const jssStyles: any = document.querySelector("#jss-server-side");
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
   }, []);
 
   return (
-    <Fragment>
+    <ApolloProvider client={apolloClient}>
       <Head>
         <link
           rel="stylesheet"
@@ -37,7 +40,7 @@ function MyApp({Component, pageProps}: AppProps) {
         <CssBaseline />
         <Component {...pageProps} />
       </ThemeProvider>
-    </Fragment>
+    </ApolloProvider>
   );
 }
 
@@ -52,9 +55,9 @@ function MyApp({Component, pageProps}: AppProps) {
 //
 //   return { ...appProps }
 // }
-MyApp.propTypes = {
-  Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired,
-};
+// MyApp.propTypes = {
+//   Component: PropTypes.elementType.isRequired,
+//   pageProps: PropTypes.object.isRequired,
+// };
 
 export default MyApp;
