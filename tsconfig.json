@@ -1,22 +1,7 @@
 {
   "compilerOptions": {
-<<<<<<< HEAD
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "ES2017"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-=======
     "allowJs": true,
     "alwaysStrict": true,
->>>>>>> master
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -29,17 +14,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
-<<<<<<< HEAD
-    "isolatedModules": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "jsx": "preserve",
-    "alwaysStrict": true,
-=======
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext"
->>>>>>> master
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx"]
