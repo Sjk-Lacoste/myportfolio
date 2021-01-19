@@ -1,6 +1,5 @@
 import { FunctionComponent } from "react";
 import { Container, Grid, Typography } from "@material-ui/core";
-import Image from "next/image";
 import Brand from "./Brand";
 import { generateId } from "../../lib/helpers/generateId";
 
