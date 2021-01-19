@@ -1,30 +1,13 @@
-import { FunctionComponent } from "react";
-import Head from "../components/head";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
-import Banner from "../components/Banner";
-import AboutArea from "../components/AboutArea";
-import Brands from "../components/Brands/Brands";
-import Newsletter from "../components/Newsletter/Newsletter";
+import Link from 'next/link'
 
-const About: FunctionComponent = () => {
+export default function About() {
   return (
-    <>
-      <Head title="About Me" />
-
-      <Navbar />
-
-      <Banner title="About Me" pageURL="/about" pageName="About" />
-
-      <AboutArea />
-
-      <Brands />
-
-      <Newsletter />
-
-      <Footer />
-    </>
-  );
-};
-
-export default About;
+    <div>
+      Welcome to the about page. Go to the{' '}
+      <Link href="/">
+        <a>Home</a>
+      </Link>{' '}
+      page.
+    </div>
+  )
+}

@@ -34,4 +34,8 @@ describe('Index', () => {
     )
     expect(component.toJSON()).toMatchSnapshot()
   })
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> master

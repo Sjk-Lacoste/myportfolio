@@ -1,5 +1,5 @@
 schema: '**/*.graphqls'
-schemaEntrypoint: 'lib/apollo/type-defs.graphqls'
+schemaEntrypoint: 'lib/type-defs.graphqls'
 documents: '**/*.graphql'
 plugins:
   - typescript
