@@ -20,7 +20,8 @@
     "graphql": "15.3.0",
     "next": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sass": "^1.32.4"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.17.8",
@@ -39,5 +40,11 @@
     "react-test-renderer": "16.13.1",
     "typescript": "^3.9.7",
     "yaml-loader": "0.6.0"
-  }
+  },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ]
 }
