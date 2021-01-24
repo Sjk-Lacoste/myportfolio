@@ -71,6 +71,7 @@ const Navbar: FunctionComponent = () => {
               <a>
                 <Image
                   src="/logo.png"
+                  alt="SjkFolio Logo"
                   height={60}
                   width={60}
                 />

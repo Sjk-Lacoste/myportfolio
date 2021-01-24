@@ -4,6 +4,10 @@ import Head from "next/head";
 import { ApolloProvider } from '@apollo/client';
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+
+library.add(fab)
 
 import { useApollo } from '../lib/apollo';
 import theme from "../utils/theme";
@@ -22,16 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-      </Head>
+      <Head />
 
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent and simple baseline to build upon. */}
