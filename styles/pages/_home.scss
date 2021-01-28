@@ -1,0 +1,38 @@
+/* Start Features Area css
+============================================================================================ */
+.features_area {
+  padding-bottom: 170px;
+  @media screen and (max-width: 1199px) {
+    padding-bottom: 50px;
+  }
+}
+
+.feature_item {
+  padding: 45px 25px;
+  text-align: center;
+  background: $light-grey;
+  cursor: pointer;
+  margin-bottom: 30px;
+  @include transition;
+
+//   img {
+//     margin-bottom: 35px;
+//     max-height: 250px !important;
+//     width: auto;
+//   }
+
+  h4 {
+    font-size: 20px;
+    margin: 20px 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-bottom: 0px;
+  }
+
+  &:hover {
+    box-shadow: 0px 15px 30px rgba(77, 87, 222, 0.3);
+    background: $white;
+  }
+}

@@ -1,6 +1,11 @@
 import { Slide, useScrollTrigger } from "@material-ui/core";
+import { FunctionComponent } from 'react';
 
-const HideOnScroll = ({ children, window }) => {
+interface Props {
+  children: any;
+  window: any;
+}
+const HideOnScroll: FunctionComponent<Props> = ({ children, window }) => {
   const trigger = useScrollTrigger({ target: window ? window() : undefined });
 
   return (
