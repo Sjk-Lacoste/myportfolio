@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { AppProps } from 'next/app';
-import Head from "next/head";
 import { ApolloProvider } from '@apollo/client';
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -26,8 +25,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <Head />
-
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent and simple baseline to build upon. */}
         <CssBaseline />

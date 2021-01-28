@@ -3,7 +3,6 @@ import {
   
   AppBar,
   Toolbar,
-  Typography,
   IconButton,
   MenuItem,
   Menu,
@@ -64,9 +63,6 @@ const Navbar: FunctionComponent = () => {
         >
           <div className="grad-bar" />
           <Toolbar className="main_menu">
-            {/* <Typography variant="h6" className={classes.title}>
-              SjkFolio
-            </Typography> */}
             <Link href="/">
               <a>
                 <Image

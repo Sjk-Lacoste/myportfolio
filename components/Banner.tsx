@@ -16,7 +16,7 @@ const Banner: FunctionComponent<Props> = ({ title, pageURL, pageName }) => {
           <Container maxWidth="lg">
             <div className="banner_content text-center">
               <Typography component="h2" variant="h2">
-                About Me
+                {title}
               </Typography>
               <div className="page_link">
                 <Link href="/">Home</Link>
