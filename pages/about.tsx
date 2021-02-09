@@ -1,13 +1,25 @@
 import { FunctionComponent } from 'react';
 import Head from '../components/Head';
-import Navbar from '../components/Navbar/Navbar';
+import Layout from '../components/Layout';
+import Banner from "../components/Banner";
+import AboutArea from '../components/AboutArea';
+import Brands from '../components/Brands/Brands';
+import Newsletter from '../components/Newsletter/Newsletter';
 
 const About: FunctionComponent = () =>  {
   return (
     <>
       <Head title="About Me - SjkFolio" />
 
-      <Navbar />
+      <Layout>
+        <Banner title="About Me" pageURL="/about" pageName="About" />
+
+        <AboutArea />
+
+        <Brands />
+
+        <Newsletter />
+      </Layout>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
 import {
   Container,
   Grid,
@@ -6,9 +6,16 @@ import {
   FormControl,
   TextField,
   Button,
-} from "@material-ui/core";
+} from '@material-ui/core';
+import { Formik, Form } from 'formik';
 
-const Newsletter: FunctionComponent = () => {
+interface MyFormValues {
+  email: string;
+}
+
+const Newsletter: FunctionComponent<{}> = () => {
+  const initialValues: MyFormValues = { email: '' };
+
   return (
     <>
       <section className="newsletter_area">
@@ -28,36 +35,100 @@ const Newsletter: FunctionComponent = () => {
                 </Typography>
 
                 <div className="subscribe-form" id="mc_embed_signup">
-                  <form className="subscription relative">
-                    <Grid container spacing={1}>
-                      <Grid item xs={12} sm={12} md={7}>
-                        <FormControl fullWidth variant="outlined">
-                          <TextField
-                            label="Email Address"
-                            type="email"
-                            name="email"
-                            fullWidth
-                            required
-                            variant="outlined"
-                            className="subscription-email"
-                          />
-                        </FormControl>
-                      </Grid>
-                      <Grid item xs={12} sm={12} md={5}>
-                        <FormControl fullWidth>
-                          <Button
-                            type="submit"
-                            className="primary-btn hover"
-                            variant="contained"
-                          >
-                            Get Started
-                          </Button>
-                        </FormControl>
-                      </Grid>
-                    </Grid>
+                  <Formik
+                    initialValues={initialValues}
+                    onSubmit={(data) => {
+                      console.log('Form data: ', data);
+                    }}
+                  >
+                    {({ values, handleChange, handleBlur }) => (
+                      <Form className="subscription relative">
+                        <Grid container spacing={1}>
+                          <Grid item xs={12} sm={12} md={7}>
+                            <FormControl fullWidth variant="outlined">
+                              <TextField
+                                label="Email Address"
+                                type="email"
+                                name="email"
+                                fullWidth
+                                required
+                                variant="outlined"
+                                className="subscription-email"
+                                value={values.email}
+                                onChange={handleChange('email')}
+                                onBlur={handleBlur('email')}
+                              />
+                            </FormControl>
+                          </Grid>
+                          <Grid item xs={12} sm={12} md={5}>
+                            <FormControl fullWidth>
+                              <Button
+                                type="submit"
+                                className="primary-btn hover"
+                                variant="contained"
+                                // disabled={isSubmitting}
+                              >
+                                Get Started
+                              </Button>
+                            </FormControl>
+                          </Grid>
+                        </Grid>
+                      </Form>
+                    )}
+                  </Formik>
+                  {/* <Formik
+                    initialValues={initialValues}
+                    onSubmit={(values, actions, { resetForm }) => {
+                      console.log(values, actions);
+                      alert(JSON.stringify(values, null, 2));
+                      actions.setSubmitting(false);
+                      resetForm({ values: '' });
+                    }}
+                  >
+                    {({
+                      handleChange,
+                      handleBlur,
+                      isSubmitting,
+                      handleSubmit,
+                      values,
+                    }) => (
+                      <Form className="subscription relative">
+                        <Grid container spacing={1}>
+                          <Grid item xs={12} sm={12} md={7}>
+                            <FormControl fullWidth variant="outlined">
+                              <TextField
+                                label="Email Address"
+                                type="email"
+                                name="email"
+                                fullWidth
+                                required
+                                variant="outlined"
+                                className="subscription-email"
+                                value={values.email}
+                                onChange={handleChange('email')}
+                                onBlur={handleBlur('email')}
+                              />
+                            </FormControl>
+                          </Grid>
+                          <Grid item xs={12} sm={12} md={5}>
+                            <FormControl fullWidth>
+                              <Button
+                                type="submit"
+                                className="primary-btn hover"
+                                variant="contained"
+                                onClick={handleSubmit}
+                                disabled={isSubmitting}
+                              >
+                                Get Started
+                              </Button>
+                            </FormControl>
+                          </Grid>
+                        </Grid>
 
-                    <div className="info" />
-                  </form>
+                        <div className="info" />
+                      </Form>
+                    )}
+                  </Formik> */}
                 </div>
               </div>
             </Grid>
