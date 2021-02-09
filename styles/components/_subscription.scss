@@ -5,7 +5,7 @@
 }
 
 .subscription_box {
-  background: url(/img/subscribe-bg.png) no-repeat center;
+  background: url("/images/subscribe-bg.png") no-repeat center;
   padding: 150px 0px;
 
   @media (max-width: 767px) {
@@ -71,7 +71,7 @@
       margin-top: 20px;
     }
   }
-  .subcribe-form {
+  .subscribe-form {
     margin-top: 45px;
   }
 }
