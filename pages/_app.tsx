@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
-import { AppProps } from 'next/app';
-import { ApolloProvider } from '@apollo/client';
+import { AppProps } from "next/app";
+import { ApolloProvider } from "@apollo/client";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab)
+library.add(fab);
+library.add(fas);
 
-import { useApollo } from '../lib/apollo';
+import { useApollo } from "../lib/apollo";
 import theme from "../utils/theme";
 import "../styles/main.scss";
 
@@ -31,5 +33,5 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </ThemeProvider>
     </ApolloProvider>
-  )
+  );
 }

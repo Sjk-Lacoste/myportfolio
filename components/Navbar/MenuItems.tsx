@@ -19,9 +19,9 @@ export const MenuItems = [
   //   url: "/services",
   //   cName: "nav-item",
   // },
-  // {
-  //   title: "Contact",
-  //   url: "/contact",
-  //   cName: "nav-item",
-  // },
+  {
+    title: "Contact",
+    url: "/contact",
+    cName: "nav-item",
+  },
 ];

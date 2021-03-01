@@ -6,7 +6,7 @@ import packageFile from "../../package.json";
 
 const social = [
   {
-    url: "/",
+    url: "https://linkedin.com/in/tshepo-mohlatlole",
     icon: "linkedin",
   },
   {
@@ -18,10 +18,10 @@ const social = [
     icon: "discord",
   },
   {
-    url: "/",
+    url: "https://github.com/Sjk-Lacoste",
     icon: "github",
   },
-]
+];
 
 const Footer: FunctionComponent = () => {
   return (
@@ -54,7 +54,7 @@ const Footer: FunctionComponent = () => {
                       >
                         <FontAwesomeIcon icon={["fab", media.icon]} />
                       </Link>
-                    )
+                    );
                   })}
                 </div>
               </div>

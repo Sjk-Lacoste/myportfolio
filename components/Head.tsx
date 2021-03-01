@@ -2,16 +2,16 @@ import { FunctionComponent } from "react";
 import NextHead from "next/head";
 
 type Props = {
-  title?: string,
-  metaTitle?: string,
-  copyright?: string,
-  language?: string,
-  keywords?: string,
-  description?: string,
-  author?: string,
-  url?: string,
-  ogImage?: string,
-}
+  title?: string;
+  metaTitle?: string;
+  copyright?: string;
+  language?: string;
+  keywords?: string;
+  description?: string;
+  author?: string;
+  url?: string;
+  ogImage?: string;
+};
 
 const defaultMetaTitle = "SjkFolio";
 const defaultDescription = "";
@@ -42,22 +42,16 @@ const Head: FunctionComponent<Props> = ({
     <meta name="copyright" content={copyright} />
     <meta name="language" content={language} />
     <meta name="keywords" content={keywords} />
-    <meta
-      name="description"
-      content={description}
-    />
+    <meta name="description" content={description} />
     <meta name="author" content={author} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta httpEquiv="X-UA-Compatible" content="IE=8,chrome=1" />
 
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/logo.png" />
 
     <meta property="og:url" content={url} />
     <meta property="og:title" content={title || ""} />
-    <meta
-      property="og:description"
-      content={description}
-    />
+    <meta property="og:description" content={description} />
     <meta name="twitter:site" content={url} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage} />
@@ -65,8 +59,14 @@ const Head: FunctionComponent<Props> = ({
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
   </NextHead>
 );
 
