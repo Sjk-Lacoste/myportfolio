@@ -8,6 +8,17 @@ import resolvers from './resolvers'
 const loadedFiles = loadFilesSync(join(process.cwd(), graphQLLetConfig.schema))
 const typeDefs = mergeTypeDefs(loadedFiles)
 
+type Query {
+  allTodos: [TodoMVC!]!
+  Todo(todoId: ID!): TodoMVC
+}
+
+type TodoMVC {
+  todoId: ID!
+  completed: Boolean!
+  description: String!
+}
+
 export const schema = makeExecutableSchema({
   typeDefs,
   resolvers,
