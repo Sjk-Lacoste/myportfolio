@@ -26,7 +26,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       throw new Error(JSON.stringify(err));
     });
 
-    const { emailTo, emailFrom, subject, message } = req.body;
+    const { emailTo, emailFrom, subject, message } = JSON.parse(req.body);
 
     let gmailService = new GMAILService({
       SmtpFromAddress: emailFrom,
