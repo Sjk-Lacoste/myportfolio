@@ -66,7 +66,6 @@ const Newsletter: FunctionComponent<{}> = () => {
                                 type="submit"
                                 className="primary-btn hover"
                                 variant="contained"
-                                // disabled={isSubmitting}
                               >
                                 Get Started
                               </Button>
@@ -76,59 +75,6 @@ const Newsletter: FunctionComponent<{}> = () => {
                       </Form>
                     )}
                   </Formik>
-                  {/* <Formik
-                    initialValues={initialValues}
-                    onSubmit={(values, actions, { resetForm }) => {
-                      console.log(values, actions);
-                      alert(JSON.stringify(values, null, 2));
-                      actions.setSubmitting(false);
-                      resetForm({ values: '' });
-                    }}
-                  >
-                    {({
-                      handleChange,
-                      handleBlur,
-                      isSubmitting,
-                      handleSubmit,
-                      values,
-                    }) => (
-                      <Form className="subscription relative">
-                        <Grid container spacing={1}>
-                          <Grid item xs={12} sm={12} md={7}>
-                            <FormControl fullWidth variant="outlined">
-                              <TextField
-                                label="Email Address"
-                                type="email"
-                                name="email"
-                                fullWidth
-                                required
-                                variant="outlined"
-                                className="subscription-email"
-                                value={values.email}
-                                onChange={handleChange('email')}
-                                onBlur={handleBlur('email')}
-                              />
-                            </FormControl>
-                          </Grid>
-                          <Grid item xs={12} sm={12} md={5}>
-                            <FormControl fullWidth>
-                              <Button
-                                type="submit"
-                                className="primary-btn hover"
-                                variant="contained"
-                                onClick={handleSubmit}
-                                disabled={isSubmitting}
-                              >
-                                Get Started
-                              </Button>
-                            </FormControl>
-                          </Grid>
-                        </Grid>
-
-                        <div className="info" />
-                      </Form>
-                    )}
-                  </Formik> */}
                 </div>
               </div>
             </Grid>

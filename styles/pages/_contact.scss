@@ -1,0 +1,66 @@
+.contact_area {
+    .mapBox {
+        height: 420px;
+        margin-top: 80px;
+    }
+
+    .contact_info {
+        .info_item {
+            // position: relative;
+            // padding-left: 45px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .home-icon {
+                max-width: 30px;
+            }
+            .phone-icon, .email-icon {
+                max-width: 24px;
+            }
+            svg {
+                margin: 25px;
+                filter: invert(36%) sepia(26%) saturate(2590%) hue-rotate(221deg) brightness(98%) contrast(106%);
+            }
+            h6 {
+                font-size: 16px;
+                line-height: 24px;
+                font-family: $primary-font;
+                font-weight: bold;
+                margin-bottom: 0px;
+                color: $title-color;
+                a {
+                    color: $title-color;
+                    text-decoration: none;
+                }
+            }
+            p {
+                font-size: 14px;
+                line-height: 24px;
+                padding: 2px 0px;
+            }
+        }
+    }
+
+    .contact_form {
+        .MuiOutlinedInput-multiline {
+            color: #999 !important;
+            @include placeholder {
+                color: #999 !important;
+            }
+
+            textarea {
+                resize: none !important;
+                height: 10em !important;
+            }
+        }
+
+        .btn-wrapper {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .primary_btn {
+            margin-top: 20px;
+        }
+    }
+}
