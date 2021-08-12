@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Index renders the html we want 1`] = `
-<div>
-  <h1>
-    Hello
-  </h1>
-</div>
-`;
