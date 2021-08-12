@@ -1,31 +1,32 @@
-import { FunctionComponent, useState } from "react";
+import { NextPage } from 'next';
+import { useState } from 'react';
 import {
   Container,
   Grid,
   Typography,
   Link,
   Tabs,
-  Tab
-} from "@material-ui/core";
+  Tab,
+} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Image from "next/image";
-import Head from "../components/Head";
-import Navbar from "../components/Navbar/Navbar";
-import Brands from "../components/Brands/Brands";
-import AboutArea from '../components/AboutArea';
-import PortfolioTab from '../components/Tabs/Portfolio';
-import Footer from "../components/Footer/Footer";
+import Image from 'next/image';
+import Head from '../src/components/Head';
+import Navbar from '../src/components/Navbar/Navbar';
+import Brands from '../src/components/Brands/Brands';
+import AboutArea from '../src/components/AboutArea';
+import PortfolioTab from '../src/components/Tabs/Portfolio';
+import Footer from '../src/components/Footer/Footer';
 
-import { a11yProps } from "../utils/helpers/tabProps";
+import { a11yProps } from '../src/utils/helpers/tabProps';
 
 const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
   },
 }));
 
-const Index: FunctionComponent = () => {
+const Index: NextPage = (): JSX.Element => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
@@ -192,7 +193,7 @@ const Index: FunctionComponent = () => {
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

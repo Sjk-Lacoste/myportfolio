@@ -1,12 +1,12 @@
 import { FunctionComponent } from 'react';
-import Head from '../components/Head';
-import Layout from '../components/Layout';
-import Banner from "../components/Banner";
-import AboutArea from '../components/AboutArea';
-import Brands from '../components/Brands/Brands';
-import Newsletter from '../components/Newsletter/Newsletter';
+import Head from '../src/components/Head';
+import Layout from '../src/components/Layout';
+import Banner from '../src/components/Banner';
+import AboutArea from '../src/components/AboutArea';
+import Brands from '../src/components/Brands/Brands';
+import Newsletter from '../src/components/Newsletter/Newsletter';
 
-const About: FunctionComponent = () =>  {
+const About: FunctionComponent = () => {
   return (
     <>
       <Head title="About Me - SjkFolio" />
@@ -21,7 +21,7 @@ const About: FunctionComponent = () =>  {
         <Newsletter />
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export default About;

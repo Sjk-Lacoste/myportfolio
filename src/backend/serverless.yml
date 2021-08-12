@@ -1,0 +1,40 @@
+service: sjk-folio
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+  deploymentBucket:
+    name: tshepo-serverless-deployments
+    serverSideEncryption: AES256
+  stage: dev
+  region: eu-central-1
+  iam:
+    role: 
+      statements:
+        - Effect: "Allow"
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource: "arn:aws:dynamodb:eu-central-1:866588526507:table/${self:service}-${self:provider.stage}-users"
+  environment:
+    USERS_TABLE: ${self:service}-${self:provider.stage}-users
+    USER_POOL_ID:
+      Ref: UserPool
+    USER_POOL_CLIENT:
+      Ref: UserPoolClient
+    REGION: ${self:provider.region}
+    POST_REGISTRATION_VERIFICATION_REDIRECT_URL:  https://www.tshepomohlatlole.co.za/signup-success
+
+functions:
+  - ${file(./functions/functions.yml)}
+
+resources:
+  - ${file(./resources/cognito-user-pool.yml)}
+  - ${file(./resources/dynamo-db-tables.yml)}
