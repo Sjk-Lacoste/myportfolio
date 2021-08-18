@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Container, Grid, Typography } from '@material-ui/core';
-import Brand from './Brand';
-import { generateId } from '../../utils/helpers/generateId';
+import Brand from '@components/Brands/Brand';
+import { generateId } from '@utils/helpers/generateId';
 
 const brandsData = [
   {
@@ -65,7 +65,7 @@ const Brands: FunctionComponent = () => {
     <>
       <section className="brand_area section_gap_bottom">
         <Container maxWidth="lg">
-          <Grid container spacing={2} justify="center">
+          <Grid container spacing={2} justifyContent="center">
             <Grid item lg={6}>
               <Grid container spacing={2}>
                 {brandsData.map((brand: any) => (

@@ -13,8 +13,8 @@ import Link from 'next/link';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { MenuItems } from './MenuItems';
-import { generateId } from '../../utils/helpers/generateId';
+import { MenuItems } from '@components/Navbar/MenuItems';
+import { generateId } from '@utils/helpers/generateId';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {

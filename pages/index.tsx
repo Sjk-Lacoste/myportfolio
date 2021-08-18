@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Container,
   Grid,
@@ -10,14 +10,15 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Image from 'next/image';
-import Head from '../src/components/Head';
-import Navbar from '../src/components/Navbar/Navbar';
-import Brands from '../src/components/Brands/Brands';
-import AboutArea from '../src/components/AboutArea';
-import PortfolioTab from '../src/components/Tabs/Portfolio';
-import Footer from '../src/components/Footer/Footer';
+import Head from '@components/Head';
+import Navbar from '@components/Navbar/Navbar';
+import Brands from '@components/Brands/Brands';
+import AboutArea from '@components/AboutArea';
+import PortfolioTab from '@components/Tabs/Portfolio';
+import Footer from '@components/Footer/Footer';
 
-import { a11yProps } from '../src/utils/helpers/tabProps';
+import { a11yProps } from '@utils/helpers/tabProps';
+import Layout from '@components/Layouts/Layout';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -35,10 +36,7 @@ const Index: NextPage = (): JSX.Element => {
   };
 
   return (
-    <>
-      <Head title="Home - SjkFolio" />
-      <Navbar />
-
+    <Layout title="Home">
       <section className="home_banner_area">
         <div className="banner_inner">
           <Container maxWidth="lg">
@@ -190,9 +188,7 @@ const Index: NextPage = (): JSX.Element => {
           </div>
         </Container>
       </section>
-
-      <Footer />
-    </>
+    </Layout>
   );
 };
 

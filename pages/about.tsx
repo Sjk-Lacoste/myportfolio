@@ -1,26 +1,21 @@
-import { FunctionComponent } from 'react';
-import Head from '../src/components/Head';
-import Layout from '../src/components/Layout';
-import Banner from '../src/components/Banner';
-import AboutArea from '../src/components/AboutArea';
-import Brands from '../src/components/Brands/Brands';
-import Newsletter from '../src/components/Newsletter/Newsletter';
+import { NextPage } from 'next';
+import Banner from '@components/Banner';
+import AboutArea from '@components/AboutArea';
+import Brands from '@components/Brands/Brands';
+import Newsletter from '@components/Newsletter/Newsletter';
+import Layout from '@components/Layouts/Layout';
 
-const About: FunctionComponent = () => {
+const About: NextPage = (): JSX.Element => {
   return (
-    <>
-      <Head title="About Me - SjkFolio" />
+    <Layout>
+      <Banner title="About Me" pageURL="/about" pageName="About" />
 
-      <Layout>
-        <Banner title="About Me" pageURL="/about" pageName="About" />
+      <AboutArea />
 
-        <AboutArea />
+      <Brands />
 
-        <Brands />
-
-        <Newsletter />
-      </Layout>
-    </>
+      <Newsletter />
+    </Layout>
   );
 };
 

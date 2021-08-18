@@ -7,8 +7,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fab);
 
-import theme from '../src/utils/theme';
-import '../src/styles/main.scss';
+import '@styles/main.scss';
+import { AppProvider as Provider } from '@context/AppContext';
+import theme from '@utils/theme';
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -20,10 +21,12 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      {/* CssBaseline kickstart an elegant, consistent and simple baseline to build upon. */}
-      <CssBaseline />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Provider>
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent and simple baseline to build upon. */}
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </Provider>
   );
 }

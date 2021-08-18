@@ -28,7 +28,7 @@ const Footer: FunctionComponent = () => {
     <>
       <footer className="footer_area">
         <Container maxWidth="lg">
-          <Grid container spacing={2} justify="center">
+          <Grid container spacing={2} justifyContent="center">
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <div className="footer_top flex-column">
                 <div className="footer_logo">
@@ -63,7 +63,7 @@ const Footer: FunctionComponent = () => {
           <Grid
             container
             spacing={2}
-            justify="center"
+            justifyContent="center"
             className="footer_bottom"
           >
             <Grid item xs={12} sm={12} md={12} lg={8} className="footer-text">
