@@ -33,7 +33,7 @@ provider:
     POST_REGISTRATION_VERIFICATION_REDIRECT_URL:  https://www.tshepomohlatlole.co.za/signup-success
 
 functions:
-  - ${file(./functions/functions.yml)}
+  - ${file(./functions/auth/authentication.yml)}
 
 resources:
   - ${file(./resources/cognito-user-pool.yml)}

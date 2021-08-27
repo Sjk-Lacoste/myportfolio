@@ -36,19 +36,11 @@ module.exports.signUp = (event, context, callback) => {
     console.log(typeof event.body);
     const userId = uuid();
 
-    const {
-      email,
-      password,
-      companyName,
-      ownerName,
-      erfNumber,
-      physicalAddress,
-      postalAddress,
-      firstName,
-      lastName,
-      phoneNumber,
-      isOwner,
-    } = JSON.parse(event.body);
+    const { email, password, firstName, lastName, phoneNumber } = JSON.parse(
+      event.body
+    );
+
+    const userRole = 'user';
 
     const attributesList = [];
 
@@ -79,7 +71,7 @@ module.exports.signUp = (event, context, callback) => {
 
     const dataRole = {
       Name: 'custom:role',
-      Value: 'user',
+      Value: userRole,
     };
 
     const dataPhoneNumber = {
@@ -118,16 +110,10 @@ module.exports.signUp = (event, context, callback) => {
           const databaseParams = {
             userId: userId,
             email,
-            companyName,
-            ownerName,
-            erfNumber,
-            physicalAddress,
-            postalAddress,
             firstName,
             lastName,
             phoneNumber,
-            isOwner,
-            userRole: 'user',
+            userRole: userRole,
             createdAt: new Date().getTime(),
             updatedAt: new Date().getTime(),
           };

@@ -1,12 +1,12 @@
 signUp:
-  handler: auth/signup.signUp
+  handler: functions/auth/signup.signUp
   events:
     - http:
         path: signup
         method: POST
         cors: true
 signIn:
-  handler: auth/signin.signIn
+  handler: functions/auth/signin.signIn
   events:
     - http:
         path: signin
