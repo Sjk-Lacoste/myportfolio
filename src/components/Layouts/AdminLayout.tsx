@@ -3,7 +3,7 @@ import Navbar from '@components/Navbar/Navbar';
 import Footer from '@components/Footer/Footer';
 import { Typography } from '@material-ui/core';
 import { useAppContext } from '@context/AppContext';
-import { IHeadProps } from '@utils/interfaces';
+import { IContext, IHeadProps } from '@utils/interfaces';
 import Head from '@components/Head';
 
 interface Props extends IHeadProps {
@@ -16,7 +16,7 @@ const AdminLayout: FC<Props> = ({
   description,
   keywords,
 }): JSX.Element => {
-  const { isAuthenticated } = useAppContext();
+  const { isAuthenticated } = useAppContext() as IContext;
 
   useEffect(() => {
     (() => {

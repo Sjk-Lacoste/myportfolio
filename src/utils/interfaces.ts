@@ -80,10 +80,10 @@ export interface ICurrentUser {
   photo_url?: string;
 }
 
-export interface IContext {
+export type IContext = {
   user?: IUser | null;
   isAuthenticated?: boolean;
-}
+};
 
 export interface IHeadProps {
   title?: string;

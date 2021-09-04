@@ -9,12 +9,26 @@ import { IContext, IUser } from '@utils/interfaces';
 
 const AppContext = createContext<IContext | null>(null);
 
-export function AppProvider(props: { children: ReactNode }): JSX.Element {
+export default function AppProvider(props: {
+  children: ReactNode;
+}): JSX.Element {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
   const [user, setUser] = useState<IUser | null>(null);
 
+  useEffect(() => {
+    (() => {
+      setUser(null);
+    })();
+  }, [user]);
+
+  useEffect(() => {
+    (() => {
+      setIsAuthenticated(false);
+    })();
+  }, [isAuthenticated]);
+
   return (
-    <AppContext.Provider value={{ isAuthenticated, user }}>
+    <AppContext.Provider value={{ user, isAuthenticated }}>
       {props.children}
     </AppContext.Provider>
   );

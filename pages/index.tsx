@@ -10,15 +10,14 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Image from 'next/image';
-import Head from '@components/Head';
-import Navbar from '@components/Navbar/Navbar';
 import Brands from '@components/Brands/Brands';
 import AboutArea from '@components/AboutArea';
 import PortfolioTab from '@components/Tabs/Portfolio';
-import Footer from '@components/Footer/Footer';
 
 import { a11yProps } from '@utils/helpers/tabProps';
 import Layout from '@components/Layouts/Layout';
+import { IContext } from '@utils/interfaces';
+import { useAppContext } from '@context/AppContext';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -31,9 +30,17 @@ const Index: NextPage = (): JSX.Element => {
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
+  const { isAuthenticated } = useAppContext() as IContext;
+
   const handleTabChange = (newValue: any) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    (() => {
+      console.log('Context: ', isAuthenticated);
+    })();
+  }, []);
 
   return (
     <Layout title="Home">

@@ -12,3 +12,26 @@ signIn:
         path: signin
         method: POST
         cors: true
+cognitoCustomMessage:
+  handler: functions/auth/customMessage.cognitoConfirmUserMessage
+  events:
+    - http:
+        path: user-confirmation-email
+        method: POST
+        cors: true
+cognitoConfirmUser:
+  handler: functions/auth/customMessage.cognitoConfirmUser
+  events:
+    - http:
+        path: redirect
+        method: GET
+        integration: lambda
+        request:
+          template:
+            application/json: '{ "code":"$input.params("code")", "username":"$input.params("username")", "clientId":"$input.params("clientId")","region":"$input.params("region")", "email":"$input.params("email")" }'
+        response:
+          headers:
+            Location: "'${self:provider.environment.POST_REGISTRATION_VERIFICATION_REDIRECT_URL}'"
+          statusCodes:
+            302:
+              pattern: "" # Default method
