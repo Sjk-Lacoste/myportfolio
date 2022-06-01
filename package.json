@@ -23,7 +23,7 @@
     "@types/redux-logger": "^3.0.9",
     "axios": "^0.21.1",
     "formik": "^2.2.6",
-    "next": "latest",
+    "next": "^12.1.6",
     "nookies": "^2.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -48,11 +48,5 @@
     "prettier": "^2.3.2",
     "typescript": "^4.3.5",
     "webpack-bundle-analyzer": "^4.3.0"
-  },
-  "browserslist": [
-    ">0.3%",
-    "not ie 11",
-    "not dead",
-    "not op_mini all"
-  ]
+  }
 }
